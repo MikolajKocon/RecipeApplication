@@ -11,6 +11,7 @@
                 <div>
                     <h3>${recipe.name}</h3>
                     <p>Description: ${recipe.description}</p>
+                    <p>Course: ${recipe.course.name}</p>
                     <p>Created: ${recipe.created}</p>
                     <p>Updated: ${recipe.updated}</p>
                     <p>Preparation Time: ${recipe.preparationTime}</p>

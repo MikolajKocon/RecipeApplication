@@ -7,7 +7,7 @@
 <%@ include file="../headers/admin-header.jsp" %>
 <h1>Add Recipe</h1>
 
-<form action="<c:url value='/admin' />" method="post">
+<form action="<c:url value='/admin/' />" method="post">
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" /><br/>
 
