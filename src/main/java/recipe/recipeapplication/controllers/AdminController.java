@@ -7,17 +7,25 @@ import org.springframework.web.bind.annotation.*;
 import recipe.recipeapplication.models.Recipe;
 import recipe.recipeapplication.repositories.RecipeRepository;
 
+import java.util.List;
+
 @Controller
-@RequestMapping("/admin")
 public class AdminController {
 
     private RecipeRepository recipeRepository;
+
+    @GetMapping("/admin")
+    public String showAdminRecipes(Model model) {
+        List<Recipe> recipes = recipeRepository.findAll();
+        model.addAttribute("recipes", recipes);
+        return "admin/admin";
+    }
 
     @GetMapping("/edit/{recipeId}")
     public String editRecipe(@PathVariable Integer recipeId, Model model) {
         Recipe recipe = recipeRepository.findById(recipeId);
         model.addAttribute("recipe", recipe);
-        return "edit-recipe";
+        return "admin/edit-recipe";
     }
 
     @GetMapping("/delete/{id}")
@@ -28,7 +36,7 @@ public class AdminController {
     @GetMapping("/add-recipe")
     public String showAddRecipeForm(Model model) {
         model.addAttribute("recipe", new Recipe());
-        return "add-recipe";
+        return "admin/add-recipe";
     }
 
     @PostMapping("/add-recipe")

@@ -21,7 +21,7 @@ public class RecipeController {
     public String showRecipes(Model model) {
         List<Recipe> recipes = recipeRepository.findAll();
         model.addAttribute("recipes", recipes);
-        return "recipes";
+        return "home/recipes";
     }
 
 }

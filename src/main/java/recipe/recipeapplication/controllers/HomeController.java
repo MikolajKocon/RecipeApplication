@@ -1,6 +1,6 @@
 package recipe.recipeapplication.controllers;
 
-import jakarta.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import recipe.recipeapplication.models.User;
 import recipe.recipeapplication.repositories.UserRepository;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 import java.util.Optional;
 
@@ -43,7 +44,7 @@ public class HomeController {
 
     @GetMapping("/login")
     public String displayLogin(HttpSession session) {
-        User user = (User) session.getAttribute("user");
+       User user = (User) session.getAttribute("user");
         if (user != null && "user".equals(user.getType())) {
             return "redirect:/home";
         }
@@ -62,11 +63,11 @@ public class HomeController {
             model.addAttribute("user", user);
             return "redirect:/home";
         }
-        if (typeOfUser.equals("employee") && user.getPassword().equals(password)) {
-            return "";
+        if (typeOfUser.equals("guest") && user.getPassword().equals(password)) {
+            return "home/recipes";
         }
         if (typeOfUser.equals("admin") && user.getPassword().equals(password)) {
-            return "admin";
+            return "admin/admin";
         }
         return "redirect:/login";
     }

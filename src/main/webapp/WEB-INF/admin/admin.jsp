@@ -8,36 +8,23 @@
 
 <h1>Welcome, Admin!</h1>
 
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Created</th>
-        <th>Updated</th>
-        <th>Preparation Time</th>
-        <th>Preparation</th>
-        <th>Edit</th>
-        <th>Delete</th>
-    </tr>
-    </thead>
-    <tbody>
+<ul>
     <c:forEach var="recipe" items="${recipes}">
-        <tr>
-            <td>${recipe.id}</td>
-            <td>${recipe.name}</td>
-            <td>${recipe.description}</td>
-            <td>${recipe.created}</td>
-            <td>${recipe.updated}</td>
-            <td>${recipe.preparationTime}</td>
-            <td>${recipe.preparation}</td>
-            <td><a href="<c:url value='/admin/edit/${recipe.id}'/>">Edit</a></td>
-            <td><a href="<c:url value='/admin/delete/${recipe.id}'/>">Delete</a></td>
-        </tr>
+        <li>
+            <div>
+                <h3>${recipe.name}</h3>
+                <p>Description: ${recipe.description}</p>
+                <p>Created: ${recipe.created}</p>
+                <p>Updated: ${recipe.updated}</p>
+                <p>Preparation Time: ${recipe.preparationTime}</p>
+                <p>Preparation: ${recipe.preparation}</p>
+                <p>Created By: ${recipe.user.firstName} ${recipe.user.lastName}</p>
+                <a href="<c:url value='/admin/edit/${recipe.id}'/>">Edit</a>
+                <a href="<c:url value='/admin/delete/${recipe.id}'/>">Delete</a>
+            </div>
+        </li>
     </c:forEach>
-    </tbody>
-</table>
+</ul>
 
 </body>
 </html>
