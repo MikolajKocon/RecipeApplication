@@ -2,11 +2,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Add Recipe</title>
-</head>
+<%@ include file="../headers/head.jsp" %>
 <body>
-
+<%@ include file="../headers/admin-header.jsp" %>
 <h1>Add Recipe</h1>
 
 <form action="<c:url value='/admin' />" method="post">

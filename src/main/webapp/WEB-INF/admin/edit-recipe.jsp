@@ -2,11 +2,9 @@
 <%@ page import="recipe.recipeapplication.models.Recipe" %>
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Edit Recipe</title>
-</head>
+<%@ include file="../headers/head.jsp" %>
 <body>
-
+<%@ include file="../headers/admin-header.jsp" %>
 <h1>Edit Recipe</h1>
 
 <form action="<c:url value='/admin/save' />" method="post">

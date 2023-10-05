@@ -2,11 +2,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Admin Dashboard</title>
-</head>
+<%@ include file="../headers/head.jsp" %>
 <body>
-<%@ include file="../headers/header.jsp" %>
+<%@ include file="../headers/admin-header.jsp" %>
 
 <h1>Welcome, Admin!</h1>
 
