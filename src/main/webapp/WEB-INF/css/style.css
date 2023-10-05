@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+header {
+    background-color: black;
+    color: wheat;
+    padding: 5px;
+    text-align: center;
+}
+
+.main-content {
+    background-color: aquamarine;
+    width: 75%;
+    height: 75%;
+    margin: 20px auto auto;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.filter-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#search {
+    width: 200px;
+    padding: 5px;
+}
+
+#courseFilter {
+    padding: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+h1 {
+    text-align: center;
+}

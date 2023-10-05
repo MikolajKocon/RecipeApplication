@@ -6,7 +6,7 @@
 
 <body>
 
-<%@ include file="../headers/home-header.jsp" %>
+<%@ include file="../headers/header.jsp" %>
 
 <div class="content">
     <form:form method="post" modelAttribute="user" id="userForm">
