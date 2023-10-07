@@ -12,7 +12,11 @@ import java.util.List;
 @Controller
 public class AdminController {
 
-    private RecipeRepository recipeRepository;
+    private final RecipeRepository recipeRepository;
+
+    public AdminController(RecipeRepository recipeRepository) {
+        this.recipeRepository = recipeRepository;
+    }
 
     @GetMapping("/admin")
     public String showAdminRecipes(Model model) {

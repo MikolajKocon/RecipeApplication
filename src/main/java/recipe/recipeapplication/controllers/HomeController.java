@@ -34,8 +34,8 @@ public class HomeController {
     }
 
     @PostMapping("/registration")
-    public String processAddForm(@Valid User user, BindingResult bindingResult, @RequestParam(name = "pass") String pass) {
-        if (bindingResult.hasErrors() || !user.getPassword().equals(pass)) {
+    public String processAddForm(@Valid User user, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
             return "home/registration";
         }
         userRepository.save(user);
@@ -67,7 +67,7 @@ public class HomeController {
             return "home/recipes";
         }
         if (typeOfUser.equals("admin") && user.getPassword().equals(password)) {
-            return "admin/admin";
+            return "redirect:/admin";
         }
         return "redirect:/login";
     }

@@ -8,7 +8,7 @@
 <h1>Edit Recipe</h1>
 
 <form action="<c:url value='/admin/save' />" method="post">
-    <input type="hidden" name="id" value="${Recipe.id}" />
+    <input type="hidden" name="id" value="${recipe.id}" />
 
     <label for="name">Name:</label>
     <input type="text" id="name" name="name" value="${recipe.name}" /><br/>

@@ -1,46 +1,38 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<html>
-
-<%@ include file="../headers/head.jsp" %>
-
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html lang="en">
+<%@ include file="../headers/head.jsp"%>
 <body>
-
 <%@ include file="../headers/header.jsp" %>
-
-<div class="content">
-    <form:form method="post" modelAttribute="user" id="userForm">
-        <h1 class="h3 mb-3 fw-normal">Registration</h1> <br>
-        <form:hidden path="id"/>
-        <div class="form-floating">
-            <form:input path="firstName" class="form-control" id="floatingFirstName"/>
-            <label for="floatingFirstName">First Name</label>
+<section class="dashboard-section">
+    <div class="container pt-4 pb-4">
+        <div class="border-dashed view-height">
+            <div class="container w-25">
+                <form class="padding-small text-center" action="${pageContext.request.contextPath}/registration" method="post">
+                    <h1 class="text-color-darker">Registration</h1>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="name" name="firstName" placeholder="first name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="surname" name="lastName" placeholder="last name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="email" name="email" placeholder="email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="password">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="repassword" name="password" placeholder="confirm password">
+                    </div>
+                    <button class="btn btn-color rounded-0" type="submit">Register</button>
+                    <div class="info-container">
+                        <div id="error-message" class="alert alert-danger d-none">
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-        <br>
-        <div class="form-floating">
-            <form:input path="lastName" class="form-control" id="floatingLastName"/>
-            <label for="floatingLastName">Last Name</label>
-        </div>
-        <br>
-        <div class="form-floating">
-            <form:input path="email" class="form-control" id="floatingEmail"/>
-            <label for="floatingEmail">Email</label>
-        </div>
-        <br>
-        <div class="form-floating">
-            <form:input path="password" type="password" class="form-control" id="floatingPassword"/>
-            <label for="floatingPassword">Password</label>
-        </div>
-        <br>
-        <div class="form-floating">
-            <input type="password" name="pass" class="form-control" id="floatingRepeatPassword"/>
-            <label for="floatingRepeatPassword">Repeat password</label>
-        </div>
-        <br>
-        <button class="btn btn-primary w-100 py-2" type="submit">Register</button>
-        <div id="error-message" class="alert alert-danger d-none"></div>
-    </form:form>
-</div>
+    </div>
+</section>
 </body>
 </html>
